@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+import pdb
 
 from models.nurse import Nurse
 
@@ -24,12 +25,12 @@ def select_all():
 
 def select(id):
     nurse = None
-    sql = "SELCECT * FROM nurses WHERE id = %s"
+    sql = "SELECT * FROM nurses WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
-
+    result = run_sql(sql, values)[0]
+    
     if result is not None:
-        nurse = Nurse( result['name'], result[id])
+        nurse = Nurse(result['name'], result['id'])
     return nurse
 
 def delete_all():
