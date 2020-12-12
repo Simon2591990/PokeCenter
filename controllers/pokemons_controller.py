@@ -36,4 +36,9 @@ def add_pokemon():
     pokemon_repository.save(pokemon)
     return redirect('/pokemon')
 
+@pokemon_blueprint.route("/pokemon/<id>/delete", methods=['POST'])
+def discharge_pokemon(id):
+    pokemon_repository.delete(id)
+    return redirect('/pokemon')
+
 

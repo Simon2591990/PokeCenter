@@ -13,9 +13,11 @@
         <li>Date of Birth: {{pokemon.dob}}</li>
         <li>Contact Details: {{pokemon.trainer_name}} {{pokemon.trainer_number}}</li>
         <li>Nurse: <a href="/pokemon/{{pokemon.nurse.id}}">{{pokemon.nurse.name}}</a></li>
-        
-
 </div>
+<form action="/pokemon/{{pokemon.id}}/delete" method="post">
+<button>Discharge</button>
+</form>
+
 
 {% endfor %}
 {% endblock %}
