@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Staff</h1>
+
+{% for nurse in nurses%}
+<div>
+    <a href="/staff/{{nurse.id}}">{{nurse.name}}</a>
+</div>
+{% endfor %}
+
+{% endblock %}
