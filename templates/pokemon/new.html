@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>New Pokemon</h1>
+
+<form action="/pokemon" method="post">
+    <div>
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Nickname" required>
+    </div>
+    <div>
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species" placeholder="Species" required>
+    </div>
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" placeholder="Type" required>
+    </div>
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
+    </div>
+    <div>
+        <label for="trainer_name">Trainer Name:</label>
+        <input type="text" id="trainer_name" name="trainer_name" placeholder="Trainer Name" required>
+    </div>
+    <div>
+        <label for="trainer_number">Trainer Number</label>
+        <input type="number" id="trainer_number" name="trainer_number" placeholder="Trainer Number" required>
+    </div>
+    <div>
+        <label for="status">Status: </label>
+        <input type="text" id="status" name="status" placeholder="Status" required>
+    </div>
+    <div>
+        <label for="nurse_id">Nurse:</label>
+        <select id="nurse_id" name="nurse_id">
+            {% for nurse in nurses %}
+            <option value="{{nurse.id}}">{{nurse.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+   <button type="submit">Add Pokemon</button> 
+</form>
+
+{% endblock %}
