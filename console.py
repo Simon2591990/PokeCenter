@@ -11,18 +11,20 @@ import repositories.pokemon_repository as pokemon_repository
 
 
 nurse_1 = Nurse("Joy")
+nurse_2 = Nurse("Chansey")
 
 nurse_repository.save(nurse_1)
+nurse_repository.save(nurse_2)
 
-pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', 'Ash', 259, 'burned')
+# pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', 'Ash', 259, 'burned')
 
-pokemon.assign_nurse(nurse_1)
-pokemon_repository.save(pokemon)
+# pokemon.assign_nurse(nurse_1)
+# pokemon_repository.save(pokemon)
 
 
-pokemon.nickname = "Almost Ivysaur"
+# pokemon.nickname = "Almost Ivysaur"
 
-pokemon_repository.update(pokemon)
+# pokemon_repository.update(pokemon)
 
 
 

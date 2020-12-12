@@ -9,3 +9,19 @@ nurses_blueprint = Blueprint("nurses", __name__)
 def staff():
     nurses = nurse_repository.select_all()
     return render_template("staff/index.html", nurses = nurses)
+
+@nurses_blueprint.route("/staff/new")
+def new_nurse():
+    return render_template("/staff/new.html")
+
+@nurses_blueprint.route("/staff", methods=['POST'])
+def add_nurse():
+    name = request.form['name']
+    nurse = Nurse(name)
+    nurse_repository.save(nurse)
+    return redirect('/staff')
+
+@nurses_blueprint.route("/staff/<id>/delete", methods=['POST'])
+def remove_nurse(id):
+    nurse_repository.delete(id)
+    return redirect('/staff')
