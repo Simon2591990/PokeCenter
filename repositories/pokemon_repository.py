@@ -43,9 +43,9 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
 
-
     if result is not None:
-        nurse = nurse_repository.select(result['id'])
+        # pdb.set_trace()
+        nurse = nurse_repository.select(result['nurse_id'])
         pokemon = Pokemon(result['nickname'], result['species'], result['type'], result['dob'], result['trainer_name'], result['trainer_number'], result['status'], result['id'])
         pokemon.assign_nurse(nurse)
     return pokemon

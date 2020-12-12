@@ -2,36 +2,36 @@
 
 {% block content %}
 
-<h1>New Pokemon</h1>
+<h1>Edit Pokemon</h1>
 
 <form action="/pokemon/{{pokemon.id}}/edit"  method="post">
     <div>
         <label for="nickname">Nickname:</label>
-        <input type="text" id="nickname" name="nickname" placeholder="Nickname" required>
+        <input type="text" id="nickname" name="nickname" value="{{pokemon.nickname}}" required>
     </div>
     <div>
         <label for="species">Species:</label>
-        <input type="text" id="species" name="species" placeholder="Species" required>
+        <input type="text" id="species" name="species" value="{{pokemon.species}}" required>
     </div>
     <div>
         <label for="type">Type:</label>
-        <input type="text" id="type" name="type" placeholder="Type" required>
+        <input type="text" id="type" name="type" value="{{pokemon.type}}" required>
     </div>
     <div>
         <label for="dob">Date of Birth:</label>
-        <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
+        <input type="text" id="dob" name="dob" value="{{pokemon.dob}}" required>
     </div>
     <div>
         <label for="trainer_name">Trainer Name:</label>
-        <input type="text" id="trainer_name" name="trainer_name" placeholder="Trainer Name" required>
+        <input type="text" id="trainer_name" name="trainer_name" value="{{pokemon.trainer_name}}" required>
     </div>
     <div>
         <label for="trainer_number">Trainer Number</label>
-        <input type="number" id="trainer_number" name="trainer_number" placeholder="Trainer Number" required>
+        <input type="number" id="trainer_number" name="trainer_number" value="{{pokemon.trainer_number}}" required>
     </div>
     <div>
         <label for="status">Status: </label>
-        <input type="text" id="status" name="status" placeholder="Status" required>
+        <input type="text" id="status" name="status" value="{{pokemon.status}}" required>
     </div>
     <div>
         <label for="nurse_id">Nurse:</label>

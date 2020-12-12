@@ -43,6 +43,25 @@ def discharge_pokemon(id):
 @pokemon_blueprint.route("/pokemon/<id>/edit")
 def edit_pokemon_page(id):
     pokemon = pokemon_repository.select(id)
-    return render_template("/pokemon/<id>/edit.html", pokemon = pokemon)
+    nurses = nurse_repository.select_all()
+    return render_template("/pokemon/edit.html", pokemon = pokemon, nurses = nurses)
+
+@pokemon_blueprint.route("/pokemon/<id>/edit", methods=['POST'])
+def edit_pokemon(id):
+    nickname = request.form['nickname']
+    species = request.form['species']
+    type = request.form['type']
+    dob = request.form['dob']
+    trainer_name = request.form['trainer_name']
+    trainer_number = request.form['trainer_number']
+    status = request.form['status']
+    nurse_id = request.form['nurse_id']
+
+    nurse = nurse_repository.select(nurse_id)
+    pokemon = Pokemon(nickname, species, type, dob, trainer_name, trainer_number, status, id)
+    pokemon.assign_nurse(nurse)
+    
+    pokemon_repository.update(pokemon)
+    return redirect('/pokemon')
 
 
