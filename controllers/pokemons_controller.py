@@ -29,7 +29,6 @@ def add_pokemon():
     nurse_id = request.form['nurse_id']
 
     nurse = nurse_repository.select(nurse_id)
-    # pdb.set_trace()
     pokemon = Pokemon(nickname, species, type, dob, trainer_name, trainer_number, status)
     pokemon.assign_nurse(nurse)
     
@@ -40,5 +39,10 @@ def add_pokemon():
 def discharge_pokemon(id):
     pokemon_repository.delete(id)
     return redirect('/pokemon')
+
+@pokemon_blueprint.route("/pokemon/<id>/edit")
+def edit_pokemon_page(id):
+    pokemon = pokemon_repository.select(id)
+    return render_template("/pokemon/<id>/edit.html", pokemon = pokemon)
 
 

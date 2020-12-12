@@ -25,3 +25,16 @@ def add_nurse():
 def remove_nurse(id):
     nurse_repository.delete(id)
     return redirect('/staff')
+
+@nurses_blueprint.route("/staff/<id>/edit")
+def edit_nurse_form(id):
+    nurse = nurse_repository.select(id)
+    return render_template("/staff/edit.html", nurse = nurse)
+
+@nurses_blueprint.route("/staff/<id>/edit", methods=['POST'])
+def edit_nurse(id):
+    name = request.form['name']
+    nurse = Nurse(name, id)
+    nurse_repository.update(nurse)
+    return redirect('/staff')
+    

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+edit staff page
+<form action="/staff/{{nurse.id}}/edit" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="{{nurse.name}}" required >
+    </div>
+    <button type="submit">Confirm</button>
+
+</form>
+{% endblock %}

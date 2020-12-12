@@ -2,10 +2,9 @@
 
 {% block content %}
 <h1>Pokemon</h1>
-
 {% for pokemon in pokemons%}
-<div>
-    <ul>
+<div id="pokemon">
+    <ul id=pokemon_details>
         <li>Nickname: <a href="/pokemon/{{pokemon.id}}">{{pokemon.nickname}}</a></li>
         <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
         <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
@@ -13,11 +12,14 @@
         <li>Date of Birth: {{pokemon.dob}}</li>
         <li>Contact Details: {{pokemon.trainer_name}} {{pokemon.trainer_number}}</li>
         <li>Nurse: <a href="/pokemon/{{pokemon.nurse.id}}">{{pokemon.nurse.name}}</a></li>
-</div>
-<form action="/pokemon/{{pokemon.id}}/delete" method="post">
-<button>Discharge</button>
-</form>
 
+<form action="/pokemon/{{pokemon.id}}/edit">
+    <button>Edit</button>
+</form>
+<form action="/pokemon/{{pokemon.id}}/delete" method="post">
+    <button>Discharge</button>
+</form>
+</div>
 
 {% endfor %}
 {% endblock %}

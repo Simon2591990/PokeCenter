@@ -8,8 +8,11 @@
     <a href="/staff/{{nurse.id}}">{{nurse.name}}</a>
 </div>
 <div>
+    <form action="/staff/{{nurse.id}}/edit">
+        <button>Edit</button>        
+    </form>
     <form action="/staff/{{nurse.id}}/delete" method="post">
-    <button>Remove</button>
+        <button>Remove</button>
     </form>
 </div>
 
