@@ -8,6 +8,10 @@ body {
     
     background-color: #ffacac;
 }
+h1{
+    margin: auto;
+    width: 500px;
+}
 
 a {
     color: #ffecec;
@@ -21,13 +25,20 @@ a {
     
 }
 
-#pokemon{
+#header > ul{
     display: flex;
-    background-color: #ffacac;
-    height: auto;
-    width: 250px;
-    margin: 0px;
+}
+.pokemon_container{
+    display: flex;
     align-content: center;
+    
+}
+
+.pokemon {
+    background-color: #ffacac;
+    height: 250px;
+    width: 250px;
+    margin: 10px;
 }
 #pokemon_details{
     list-style: none;
@@ -37,4 +48,17 @@ a {
 #menu{
     display: flex;
     justify-content: space-between ;
+}
+
+.new_pokemon {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 260px;
+    align-items: flex-end;
+}
+
+.nurse_container {
+    display: flex;
+    flex-direction: column;
 }

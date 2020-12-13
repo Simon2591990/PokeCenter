@@ -2,8 +2,9 @@
 
 {% block content %}
 <h1>Pokemon</h1>
+<div class="pokemon_container">
 {% for pokemon in pokemons%}
-<div id="pokemon">
+<div class="pokemon">
     <ul id=pokemon_details>
         <li>Nickname: <a href="/pokemon/{{pokemon.id}}">{{pokemon.nickname}}</a></li>
         <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
@@ -22,4 +23,5 @@
 </div>
 
 {% endfor %}
+</div>
 {% endblock %}

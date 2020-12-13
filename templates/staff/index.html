@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1>Staff</h1>
-
+<div class="nurse_container">
 {% for nurse in nurses%}
-<div>
+<div class="nurse">
     <a href="/staff/{{nurse.id}}">{{nurse.name}}</a>
 </div>
 <div>
@@ -17,5 +17,5 @@
 </div>
 
 {% endfor %}
-
+</div>
 {% endblock %}
