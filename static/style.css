@@ -5,10 +5,13 @@ body {
 }
 
 #header {
-    
     background-color: #ffacac;
+    margin: 10px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
 }
 h1{
+    text-align: center;
     margin: auto;
     width: 500px;
 }
@@ -36,6 +39,7 @@ a {
 
 .pokemon {
     background-color: #ffacac;
+    border-radius: 10%;
     height: 250px;
     width: 250px;
     margin: 10px;
@@ -48,6 +52,7 @@ a {
 #menu{
     display: flex;
     justify-content: space-between ;
+    padding: 10px;
 }
 
 .new_pokemon {
@@ -60,5 +65,20 @@ a {
 
 .nurse_container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nurse {
+    background-color: #ffacac;
+    border-radius: 10%;
+    height: auto;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
     flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
 }

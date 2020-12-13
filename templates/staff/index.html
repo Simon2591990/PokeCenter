@@ -6,7 +6,7 @@
 {% for nurse in nurses%}
 <div class="nurse">
     <a href="/staff/{{nurse.id}}">{{nurse.name}}</a>
-</div>
+
 <div>
     <form action="/staff/{{nurse.id}}/edit">
         <button>Edit</button>        
@@ -15,7 +15,7 @@
         <button>Remove</button>
     </form>
 </div>
-
+</div>
 {% endfor %}
 </div>
 {% endblock %}
