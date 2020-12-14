@@ -11,7 +11,6 @@ def save(nurse):
     nurse.id = id
     return nurse
 
-#needs tested
 def select_all():
     nurses = []
 

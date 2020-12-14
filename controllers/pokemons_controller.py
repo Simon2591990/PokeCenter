@@ -3,6 +3,7 @@ from flask import Blueprint
 from models.pokemon import Pokemon
 import repositories.pokemon_repository as pokemon_repository
 import repositories.nurse_repository as nurse_repository
+import repositories.trainer_repository as trainer_repository
 import pdb
 
 pokemon_blueprint = Blueprint("pokemon", __name__)
@@ -14,8 +15,9 @@ def pokemon():
 
 @pokemon_blueprint.route('/pokemon/new')
 def new_pokemon():
+    trainers = trainer_repository.select_all()
     nurses = nurse_repository.select_all()
-    return render_template('/pokemon/new.html', nurses = nurses)
+    return render_template('/pokemon/new.html', nurses = nurses, trainers = trainers)
 
 @pokemon_blueprint.route('/pokemon', methods=['POST'])
 def add_pokemon():
@@ -23,13 +25,13 @@ def add_pokemon():
     species = request.form['species']
     type = request.form['type']
     dob = request.form['dob']
-    trainer_name = request.form['trainer_name']
-    trainer_number = request.form['trainer_number']
+    trainer_id = request.form['trainer_id']
     status = request.form['status']
     nurse_id = request.form['nurse_id']
 
+    trainer = trainer_repository.select(trainer_id)
     nurse = nurse_repository.select(nurse_id)
-    pokemon = Pokemon(nickname, species, type, dob, trainer_name, trainer_number, status)
+    pokemon = Pokemon(nickname, species, type, dob, trainer, status)
     pokemon.assign_nurse(nurse)
     
     pokemon_repository.save(pokemon)

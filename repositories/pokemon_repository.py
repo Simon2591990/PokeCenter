@@ -31,7 +31,7 @@ def select_all():
     results = run_sql(sql)
     for row in results:
         nurse = nurse_repository.select(row['nurse_id'])
-        pokemon = Pokemon(row['nickname'], row['species'], row['type'], row['dob'], row['trainer_name'], row['trainer_number'], row['status'], row['id'])
+        pokemon = Pokemon(row['nickname'], row['species'], row['type'], row['dob'], row['trainer_id'], row['status'], row['id'])
         pokemon.assign_nurse(nurse)
         pokemons.append(pokemon)
     return(pokemons)
@@ -52,6 +52,6 @@ def select(id):
 
 
 def update(pokemon):
-    sql = "UPDATE pokemons SET (nickname, species, type, dob, trainer_name, trainer_number, status, nurse_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s RETURNING *"
-    values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer_name, pokemon.trainer_number, pokemon.status, pokemon.nurse.id, pokemon.id]
+    sql = "UPDATE pokemons SET (nickname, species, type, dob, trainer_id, status, nurse_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s RETURNING *"
+    values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id, pokemon.id]
     run_sql(sql, values)

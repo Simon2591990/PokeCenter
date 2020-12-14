@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Trainers</h1>
+<div class="trainers_container">
+{% for trainer in trainers%}
+<div class="trainer">
+    <a href="/trainer/{{trainer.id}}">{{trainer.name}}</a>
+
+<div>
+    <form action="/trainer/{{trainer.id}}/edit">
+        <button>Edit</button>        
+    </form>
+    <form action="/trainer/{{trainer.id}}/delete" method="post">
+        <button>Remove</button>
+    </form>
+</div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
