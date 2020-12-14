@@ -6,8 +6,8 @@ from models.nurse import Nurse
 import repositories.nurse_repository as nurse_repository
 
 def save(pokemon):
-    sql = "INSERT INTO pokemons (nickname, species, type, dob, trainer_name, trainer_number, status, nurse_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer_name, pokemon.trainer_number, pokemon.status, pokemon.nurse.id]
+    sql = "INSERT INTO pokemons (nickname, species, type, dob, trainer_id, status, nurse_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     pokemon.id = id

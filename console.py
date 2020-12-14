@@ -2,8 +2,10 @@ import pdb
 
 from models.nurse import Nurse
 from models.pokemon import Pokemon
+from models.trainer import Trainer
 import repositories.nurse_repository as nurse_repository
 import repositories.pokemon_repository as pokemon_repository
+import repositories.trainer_repository as trainer_repository
 
 # pokemon_repository.delete_all()
 # nurse_repository.delete_all()
@@ -11,12 +13,12 @@ import repositories.pokemon_repository as pokemon_repository
 
 
 nurse_1 = Nurse("Joy")
-nurse_2 = Nurse("Chansey")
-
 nurse_repository.save(nurse_1)
-nurse_repository.save(nurse_2)
+trainer = Trainer("Simon", 12345)
+trainer_repository.save(trainer)
 
-pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', 'Ash', 259, 'burned')
+
+pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', trainer , 'burned')
 
 pokemon.assign_nurse(nurse_1)
 pokemon_repository.save(pokemon)
