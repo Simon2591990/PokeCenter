@@ -30,3 +30,7 @@ def select(id):
     if result is not None:
         trainer = Trainer(result['name'], result['number'], result['id'])
     return trainer
+
+def delete_all():
+    sql = "DELETE FROM trainers"
+    run_sql(sql)
