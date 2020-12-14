@@ -27,3 +27,7 @@ def remove_trainer(id):
     trainer_repository.delete(id)
     return redirect ('/trainers')
 
+@trainers_blueprint.route("/trainers/<id>/edit")
+def edit_page(id):
+    trainer = trainer_repository.select(id)
+    return render_template("/trainers/edit.html", trainer = trainer)
