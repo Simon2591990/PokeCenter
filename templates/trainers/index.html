@@ -5,13 +5,16 @@
 <div class="trainers_container">
 {% for trainer in trainers%}
 <div class="trainer">
-    <a href="/trainer/{{trainer.id}}">{{trainer.name}}</a>
+    <ul>
+        <li><a href="/trainers/{{trainer.id}}">{{trainer.name}}</a></li>
+        <li>{{trainer.number}}</li>
 
+    </ul>
 <div>
-    <form action="/trainer/{{trainer.id}}/edit">
+    <form action="/trainers/{{trainer.id}}/edit">
         <button>Edit</button>        
     </form>
-    <form action="/trainer/{{trainer.id}}/delete" method="post">
+    <form action="/trainers/{{trainer.id}}/delete" method="post">
         <button>Remove</button>
     </form>
 </div>

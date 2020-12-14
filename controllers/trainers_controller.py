@@ -22,3 +22,8 @@ def register_trainer():
     trainer_repository.save(trainer)
     return redirect('/trainers')
 
+@trainers_blueprint.route("/trainers/<id>/delete", methods=['POST'])
+def remove_trainer(id):
+    trainer_repository.delete(id)
+    return redirect ('/trainers')
+

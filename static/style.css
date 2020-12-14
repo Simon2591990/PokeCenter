@@ -15,6 +15,7 @@ h1{
     text-align: center;
     margin: auto;
     width: 500px;
+    
 }
 
 a {
@@ -23,10 +24,8 @@ a {
 }
 
 
-#header > ul > li {
-    
-    list-style: none;
-    
+ul > li {  
+    list-style: none;  
 }
 
 #header > ul{
@@ -61,12 +60,15 @@ a {
     padding: 10px;
 }
 
-.new_pokemon {
+.new_pokemon, .new_nurse, .new_trainer {
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 260px;
+    text-align: center;
     align-items: flex-end;
+    background-color: #ea9da9;
+    border-radius: 10%;
 }
 
 .nurse_container {
@@ -87,16 +89,34 @@ a {
     margin: auto;
     align-items: center;
 }
+
+.trainers_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trainer {
+    background-color: #ea9da9;
+    border-radius: 10%;
+    height: auto;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
 .Grass{
     background-color: green;
     
 }
-
 .Electric{
     background-color: yellow;
     color: black;
 }
-
 .Fire{
     background-color: red;
 }
