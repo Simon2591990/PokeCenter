@@ -22,3 +22,11 @@ def select_all():
         trainers.append(trainer)
     return trainers
 
+def select(id):
+    trainer = None
+    sql = "SELECT * FROM trainers WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    if result is not None:
+        trainer = Trainer(result['name'], result['number'], result['id'])
+    return trainer
