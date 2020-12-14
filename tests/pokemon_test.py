@@ -1,11 +1,13 @@
 import unittest
 from models.pokemon import Pokemon
 from models.nurse import Nurse
+from models.trainer import Trainer#``
 
 class TestPokemon(unittest.TestCase):
 
     def setUp(self):
-        self.pokemon = Pokemon("Seed Backman", "Bulbasaur", "Grass", "25/09/1990", "Ash", 259, 'burned' )
+        trainer = Trainer("Ash", 259)
+        self.pokemon = Pokemon("Seed Backman", "Bulbasaur", "Grass", "25/09/1990", trainer, 'burned' )
 
     def test_pokemon_has_nickname(self):
         self.assertEqual("Seed Backman", self.pokemon.nickname)
@@ -20,10 +22,10 @@ class TestPokemon(unittest.TestCase):
         self.assertEqual("25/09/1990", self.pokemon.dob)
 
     def test_pokemon_has_trainer_name(self):
-        self.assertEqual("Ash", self.pokemon.trainer_name) 
+        self.assertEqual("Ash", self.pokemon.trainer.name) 
 
     def test_pokemon_has_trainer_number(self):
-        self.assertEqual(259, self.pokemon.trainer_number)    
+        self.assertEqual(259, self.pokemon.trainer.number)    
 
     def test_pokemon_has_status(self):
         self.assertEqual('burned', self.pokemon.status)
