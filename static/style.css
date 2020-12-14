@@ -1,11 +1,12 @@
 body {
     color: #ffecec;
-    background-color: #ff835a;
+    background-color: #fbd4dc;
+    background-image: url("https://cdn.hipwallpaper.com/i/10/35/kotNd3.jpg");
     font-family: Arial, Helvetica, sans-serif
 }
 
 #header {
-    background-color: #ffacac;
+    background-color: #ea9da9;
     margin: 10px;
     border-top-left-radius: 30%;
     border-top-right-radius: 30%;
@@ -38,14 +39,19 @@ a {
 }
 
 .pokemon {
-    background-color: #ffacac;
+    background-color: #ea9da9;
     border-radius: 10%;
     height: 250px;
     width: 250px;
     margin: 10px;
+    border-width: 0 5px;
+    
+    
 }
 #pokemon_details{
     list-style: none;
+    
+
     
 }
 
@@ -70,7 +76,7 @@ a {
 }
 
 .nurse {
-    background-color: #ffacac;
+    background-color: #ea9da9;
     border-radius: 10%;
     height: auto;
     width: 150px;
@@ -81,4 +87,47 @@ a {
     margin: auto;
     align-items: center;
 }
+.Grass{
+    background-color: green;
+    
 }
+
+.Electric{
+    background-color: yellow;
+    color: black;
+}
+
+.Fire{
+    background-color: red;
+}
+
+.Water{
+    background-color: blue;
+}
+
+.Normal{
+    background-color: white;
+}
+
+/* poison
+bug 
+dragon
+fighting
+ground
+psychic
+rock */
+
+/* burn */
+.frozen{
+    border: solid rgb(69, 233, 245);
+    border-width: 0 10px;
+}
+/* paralisis */
+.poisoned{
+    border: solid rgb(135, 0, 177);
+    border-width: 0 10px;
+}
+/* fainted */
+/* healthy */
+
+

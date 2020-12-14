@@ -4,8 +4,8 @@
 <h1>Pokemon</h1>
 <div class="pokemon_container">
 {% for pokemon in pokemons%}
-<div class="pokemon">
-    <ul id=pokemon_details>
+<div class="pokemon {{pokemon.type}} {{pokemon.status}}">
+        <ul id=pokemon_details>
         <li>Nickname: <a href="/pokemon/{{pokemon.id}}/edit">{{pokemon.nickname}}</a></li>
         <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
         <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
