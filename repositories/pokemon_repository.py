@@ -3,7 +3,9 @@ import pdb
 
 from models.pokemon import Pokemon
 from models.nurse import Nurse
+from models.trainer import Trainer
 import repositories.nurse_repository as nurse_repository
+import repositories.trainer_repository as trainer_repository
 
 def save(pokemon):
     sql = "INSERT INTO pokemons (nickname, species, type, dob, trainer_id, status, nurse_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
@@ -46,12 +48,13 @@ def select(id):
     if result is not None:
         # pdb.set_trace()
         nurse = nurse_repository.select(result['nurse_id'])
-        pokemon = Pokemon(result['nickname'], result['species'], result['type'], result['dob'], result['trainer_name'], result['trainer_number'], result['status'], result['id'])
+        trainer = trainer_repository.select(result['trainer_id'])
+        pokemon = Pokemon(result['nickname'], result['species'], result['type'], result['dob'], trainer, result['status'], result['id'])
         pokemon.assign_nurse(nurse)
     return pokemon
 
 
 def update(pokemon):
-    sql = "UPDATE pokemons SET (nickname, species, type, dob, trainer_id, status, nurse_id) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s RETURNING *"
+    sql = "UPDATE pokemons SET (nickname, species, type, dob, trainer_id, status, nurse_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s RETURNING *"
     values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id, pokemon.id]
     run_sql(sql, values)

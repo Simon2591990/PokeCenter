@@ -27,8 +27,7 @@ pokemon_repository.save(pokemon)
 trainer.name = 'Simondovich'
 
 trainer_repository.update(trainer)
-
-
+# pdb.set_trace()
 # pokemon.nickname = "Almost Ivysaur"
 
 # pokemon_repository.update(pokemon)
