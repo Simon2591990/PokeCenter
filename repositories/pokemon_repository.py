@@ -33,7 +33,8 @@ def select_all():
     results = run_sql(sql)
     for row in results:
         nurse = nurse_repository.select(row['nurse_id'])
-        pokemon = Pokemon(row['nickname'], row['species'], row['type'], row['dob'], row['trainer_id'], row['status'], row['id'])
+        trainer = trainer_repository.select(row['trainer_id'])
+        pokemon = Pokemon(row['nickname'], row['species'], row['type'], row['dob'], trainer, row['status'], row['id'])
         pokemon.assign_nurse(nurse)
         pokemons.append(pokemon)
     return(pokemons)
