@@ -23,6 +23,8 @@ pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', trainer , 
 pokemon.assign_nurse(nurse_1)
 pokemon_repository.save(pokemon)
 
+print(trainer_repository.select_all())
+
 
 # pokemon.nickname = "Almost Ivysaur"
 

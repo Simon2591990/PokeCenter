@@ -10,3 +10,15 @@ def save(trainer):
     id = results[0]['id']
     trainer.id = id
     return trainer
+
+def select_all():
+    trainers = []
+
+    sql = "SELECT * FROM trainers"
+    results = run_sql(sql)
+
+    for row in results:
+        trainer = Trainer(row['name'],row['number'], row['id'])
+        trainers.append(trainer)
+    return trainers
+
