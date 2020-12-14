@@ -9,6 +9,7 @@ import repositories.trainer_repository as trainer_repository
 
 # pokemon_repository.delete_all()
 # nurse_repository.delete_all()
+# trainer_repository.delete_all()
 
 
 
@@ -23,7 +24,7 @@ pokemon = Pokemon('Seed Backman', 'Bulbasaur', 'Grass', '25/09/1990', trainer , 
 pokemon.assign_nurse(nurse_1)
 pokemon_repository.save(pokemon)
 
-trainer_repository.delete_all()
+trainer_repository.delete(18)
 
 
 # pokemon.nickname = "Almost Ivysaur"
