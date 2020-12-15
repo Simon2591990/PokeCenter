@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Edit Trainer Details</h1>
-<form action="/trainers/{{trainer.id}}/edit" method="post">
+<form class="new_pokemon" action="/trainers/{{trainer.id}}/edit" method="post">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="{{trainer.name}}" required >
