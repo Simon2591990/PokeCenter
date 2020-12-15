@@ -106,7 +106,10 @@ ul > li {
     margin-right: 10px ;
     
 }
-
+.trainers_page{
+    display: grid;
+    grid-template-areas: "trainer new_trainer";
+}
 .trainers_container {
     display: flex;
     justify-content: center;
@@ -124,6 +127,13 @@ ul > li {
     flex-direction: column;
     margin: auto;
     align-items: center;
+    grid-area: trainer;
+}
+.new_trainer{
+    grid-area: new_trainer;
+    width: 250px;
+    text-align: right;
+    margin-right: 10px ;
 }
 
 .Grass{
@@ -134,7 +144,7 @@ ul > li {
     background-color: rgb(255, 230, 0);
 }
 .Fire{
-    background-color: red;
+    background-color: rgb(255, 72, 0);
 }
 
 .Water{
@@ -171,17 +181,34 @@ ul > li {
     background-color: rgb(14, 207, 255);
 }
 
-/* burn */
-.frozen{
+.Burned{
+    border: solid rgb(255, 17, 0);
+    border-width: ;
+}
+.Frozen{
     border: solid rgb(69, 233, 245);
     border-width: 0 10px;
 }
-/* paralisis */
-.poisoned{
+.Paralysed{
+    border: solid rgb(255, 240, 36);
+    border-width: 0 10px;
+}
+.Poisoned{
     border: solid rgb(135, 0, 177);
     border-width: 0 10px;
 }
-/* fainted */
-/* healthy */
+.Confused{
+    border: solid rgb(255, 255, 255);
+    border-width: 0 10px;
+}
+.Fainted{
+    border: solid rgb(124, 124, 124);
+    border-width: 0 10px;
+}
+
+.Healthy{
+    border: solid rgb(72, 253, 0);
+    border-width: 0 10px;
+}
 
 

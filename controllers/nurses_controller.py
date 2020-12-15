@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.nurse import Nurse
 import repositories.nurse_repository as nurse_repository
+import repositories.pokemon_repository as pokemon_repository
 
 nurses_blueprint = Blueprint("nurses", __name__)
 
@@ -37,4 +38,10 @@ def edit_nurse(id):
     nurse = Nurse(name, id)
     nurse_repository.update(nurse)
     return redirect('/staff')
+
+@nurses_blueprint.route("/staff/<id>")
+def show_nurses_pokemon(id):
+    pokemons = pokemon_repository.select_all()
+    nurse = nurse_repository.select(id)
+    return render_template("/staff/pokemon.html", nurse = nurse, pokemons = pokemons)
     

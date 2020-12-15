@@ -14,6 +14,10 @@
         <input type="text" id="species" name="species" placeholder="Species" required>
     </div>
     <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
+    </div>
+    <div>
         <label for="type">Type:</label>
         <select id="type" name="type">
             <option value="Grass">Grass</option>
@@ -33,12 +37,16 @@
         </select>
     </div>
     <div>
-        <label for="dob">Date of Birth:</label>
-        <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
-    </div>
-    <div>
         <label for="status">Status:</label>
-        <input type="text" id="status" name="status" placeholder="Status" required>
+        <select  id="status" name="status" required>
+            <option value="Poisoned">Poisoned</option>
+            <option value="Frozen">Frozen</option>
+            <option value="Paralysed">Paralysed</option>
+            <option value="Burned">Burned</option>
+            <option value="Confused">Confused</option>
+            <option value="Fainted">Fainted</option>
+            <option value="Healthy">Healthy</option>
+        </select>
     </div>
     <div>
         <label for="trainer_id">Trainer Name:</label>
