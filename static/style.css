@@ -46,6 +46,8 @@ ul > li {
     width: 250px;
     margin: 10px;
     border-width: 0 5px;
+    justify-content: center;
+    align-content: center;
     
     
 }
@@ -127,6 +129,7 @@ ul > li {
     flex-direction: column;
     margin: auto;
     align-items: center;
+    text-align: center;
     grid-area: trainer;
 }
 .new_trainer{
@@ -134,6 +137,36 @@ ul > li {
     width: 250px;
     text-align: right;
     margin-right: 10px ;
+}
+
+.delete{
+    background-color: red;
+    text-align: center;
+    color: rgb(233, 233, 233);
+    text-decoration: none;
+    border: black;
+    display: inline-block;
+    padding: 10px 10px;
+    transition-duration: 0.5s;
+    border-radius: 10%;
+}
+.edit{
+    background-color: rgb(0, 102, 255);
+    text-align: center;
+    color: rgb(233, 233, 233);
+    text-decoration: none;
+    border: black;
+    display: inline-block;
+    padding: 10px 10px;
+    transition-duration: 0.5s;
+    border-radius: 10%;
+}
+
+.delete:hover{
+    background-color: rgb(110, 0, 0);
+}
+.edit:hover{
+    background-color: rgb(0, 0, 145)
 }
 
 .Grass{
@@ -183,7 +216,7 @@ ul > li {
 
 .Burned{
     border: solid rgb(255, 17, 0);
-    border-width: ;
+    
 }
 .Frozen{
     border: solid rgb(69, 233, 245);
@@ -191,15 +224,15 @@ ul > li {
 }
 .Paralysed{
     border: solid rgb(255, 240, 36);
-    border-width: 0 10px;
+    
 }
 .Poisoned{
     border: solid rgb(135, 0, 177);
-    border-width: 0 10px;
+    border-width: 5px;
 }
 .Confused{
     border: solid rgb(255, 255, 255);
-    border-width: 0 10px;
+    border-width: 10px;
 }
 .Fainted{
     border: solid rgb(124, 124, 124);
