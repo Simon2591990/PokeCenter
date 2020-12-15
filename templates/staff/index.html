@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h1>Staff</h1>
+<div class="nurse_page">
 <div class="nurse_container">
 {% for nurse in nurses%}
 <div class="nurse">
@@ -17,5 +19,14 @@
 </div>
 </div>
 {% endfor %}
+</div class="new">
+<form class="new_nurse" action="/staff" method="post">
+    <div>
+        <label for="name">New Nurse</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+    </div>
+    <button type="submit">Add Nurse</button>
+
+</form>
 </div>
 {% endblock %}
