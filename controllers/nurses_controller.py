@@ -18,7 +18,8 @@ def new_nurse():
 @nurses_blueprint.route("/staff", methods=['POST'])
 def add_nurse():
     name = request.form['name']
-    nurse = Nurse(name)
+    specialisation = request.form['specialisation']
+    nurse = Nurse(name, specialisation)
     nurse_repository.save(nurse)
     return redirect('/staff')
 
@@ -35,7 +36,8 @@ def edit_nurse_form(id):
 @nurses_blueprint.route("/staff/<id>/edit", methods=['POST'])
 def edit_nurse(id):
     name = request.form['name']
-    nurse = Nurse(name, id)
+    specialisation = request.form.specialisation
+    nurse = Nurse(name, specialisation, id)
     nurse_repository.update(nurse)
     return redirect('/staff')
 

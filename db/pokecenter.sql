@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS trainers;
 
 CREATE TABLE nurses ( 
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    specialisation VARCHAR(255)
 );
 
 CREATE TABLE trainers (

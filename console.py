@@ -13,7 +13,7 @@ import repositories.trainer_repository as trainer_repository
 
 
 
-nurse_1 = Nurse("Joy")
+nurse_1 = Nurse("Joy", "Fire")
 nurse_repository.save(nurse_1)
 trainer = Trainer("Simon", 12345)
 trainer_repository.save(trainer)

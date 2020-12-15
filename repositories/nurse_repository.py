@@ -4,8 +4,8 @@ import pdb
 from models.nurse import Nurse
 
 def save(nurse):
-    sql = "INSERT INTO nurses (name) VALUES (%s) RETURNING *"
-    values = [nurse.name]
+    sql = "INSERT INTO nurses (name, specialisation) VALUES (%s, %s) RETURNING *"
+    values = [nurse.name, nurse.specialisation]
     results = run_sql(sql, values)
     id = results[0]['id']
     nurse.id = id
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        nurse = Nurse(row['name'], row['id'])
+        nurse = Nurse(row['name'], row['specialisation'], row['id'])
         nurses.append(nurse)
     return nurses
 
@@ -29,7 +29,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     
     if result is not None:
-        nurse = Nurse(result['name'], result['id'])
+        nurse = Nurse(result['name'], result['specialisation'], result['id'])
     return nurse
 
 def delete_all():
@@ -42,8 +42,8 @@ def delete(id):
     run_sql(sql, values)
 
 def update(nurse):
-    sql = "UPDATE nurses SET name = %s WHERE id = %s"
-    values = [nurse.name, nurse.id]
+    sql = "UPDATE nurses SET (name, speialisation) = (%s, %s) WHERE id = %s"
+    values = [nurse.name, nurse.specialisation, nurse.id]
     run_sql(sql, values)
 
 

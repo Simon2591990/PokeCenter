@@ -7,7 +7,8 @@
 <div class="nurse_container">
 {% for nurse in nurses%}
 <div class="nurse">
-    <a href="/staff/{{nurse.id}}">{{nurse.name}}</a>
+    <a href="/staff/{{nurse.id}}">Name: {{nurse.name}}</a>
+    <a href="/pokemon/{{type}}">Specialisation: {{nurse.specialisation}}</a>
 
 <div>
     <form action="/staff/{{nurse.id}}/edit">
@@ -24,6 +25,10 @@
     <div>
         <label for="name">New Nurse</label>
         <input type="text" id="name" name="name" placeholder="Name" required>
+    </div>
+    <div>
+        <label for="specialisation">Specialisation:</label>
+        <input type="text" id="specialisation" name="specialisation" placeholder="Specialisation" required>
     </div>
     <button class="new_button" type="submit">Add Nurse</button>
 
