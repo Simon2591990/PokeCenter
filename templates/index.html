@@ -3,14 +3,8 @@
 {% block content %}
 <body>
     <h1>Find a Pokemon</h1>
-    <form action="/pokemon/search/{{catagory}}/{{search}}", method="post">
-        <label for="catagory">Catagory</label>
-        <select id="catagory" name="catagory">
-            <option>Type</option>
-            <option>Species</option>
-            <option>Status</option>    
-        </select>
-        <label id="search">Search</label>
+    <form action="/pokemon/search/", method="post">        
+        <label id="search">Name</label>
         <input type="text" id="search" name="search">
         <button type="submit">Search</button>
     </form>

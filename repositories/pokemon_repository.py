@@ -47,7 +47,6 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        # pdb.set_trace()
         nurse = nurse_repository.select(result['nurse_id'])
         trainer = trainer_repository.select(result['trainer_id'])
         pokemon = Pokemon(result['nickname'], result['species'], result['type'], result['dob'], trainer, result['status'], result['id'])
@@ -60,15 +59,15 @@ def update(pokemon):
     values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id, pokemon.id]
     run_sql(sql, values)
 
-def search(catagory, search):
-    pokemon = None
+def search(search):
+    pokemons = []
+    sql = "SELECT * FROM pokemons WHERE nickname = %s"
     values = [search]
-    sql = f"SELECT * FROM pokemons WHERE {catagory} = {search}"
     results = run_sql(sql, values)
-    if results is not None:
-        # pdb.set_trace()
-        nurse = nurse_repository.select(results['nurse_id'])
-        trainer = trainer_repository.select(results['trainer_id'])
-        pokemon = Pokemon(results['nickname'], results['species'], results['type'], results['dob'], trainer, results['status'], results['id'])
+    for row in results:
+        nurse = nurse_repository.select(row['nurse_id'])
+        trainer = trainer_repository.select(row['trainer_id'])
+        pokemon = Pokemon(row['nickname'], row['species'], row['type'], row['dob'], trainer, row['status'], row['id'])
         pokemon.assign_nurse(nurse)
-    return pokemon
+        pokemons.append(pokemon)
+    return pokemons
