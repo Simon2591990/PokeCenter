@@ -53,6 +53,7 @@ ul > li {
 }
 .pokemon_details{
     list-style: none;
+    margin-left: auto;
     
 
     
@@ -161,12 +162,26 @@ ul > li {
     transition-duration: 0.5s;
     border-radius: 10%;
 }
+.new_button{
+    background-color: rgb(0, 255, 76);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: black;
+    display: inline-block;
+    padding: 10px 10px;
+    transition-duration: 0.5s;
+    border-radius: 10%;
+}
 
 .delete:hover{
     background-color: rgb(110, 0, 0);
 }
 .edit:hover{
     background-color: rgb(0, 0, 145)
+}
+.new_button:hover{
+    background-color:  rgb(203, 255, 218);
 }
 
 .Grass{
@@ -220,23 +235,23 @@ ul > li {
 }
 .Frozen{
     border: solid rgb(69, 233, 245);
-    border-width: 0 10px;
+    
 }
 .Paralysed{
     border: solid rgb(255, 240, 36);
     
 }
 .Poisoned{
-    border: solid rgb(135, 0, 177);
-    border-width: 5px;
+    border: solid rgb(166, 0, 216);
+    
 }
 .Confused{
-    border: solid rgb(255, 255, 255);
-    border-width: 10px;
+    border: solid rgb(212, 194, 255);
+    
 }
 .Fainted{
     border: solid rgb(124, 124, 124);
-    border-width: 0 10px;
+    
 }
 
 .Healthy{
