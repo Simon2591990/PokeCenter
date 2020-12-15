@@ -38,7 +38,7 @@ def add_pokemon():
     return redirect('/pokemon')
 
 @pokemon_blueprint.route("/pokemon/<id>/delete", methods=['POST'])
-def discharge_pokemon(id):
+def delete_pokemon(id):
     pokemon_repository.delete(id)
     return redirect('/pokemon')
 
@@ -66,5 +66,12 @@ def edit_pokemon(id):
     
     pokemon_repository.update(pokemon)
     return redirect('/pokemon')
+
+@pokemon_blueprint.route("/pokemon/<id>/discharge", methods=['POST'])
+def discharge_pokemon(id):
+    pokemon = pokemon_repository.select(id)
+    pokemon.status = "Healthy"
+    pokemon_repository.update(pokemon)
+    return redirect("/pokemon")
 
 

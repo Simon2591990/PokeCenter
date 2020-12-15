@@ -257,6 +257,7 @@ ul > li {
 .Healthy{
     border: solid rgb(72, 253, 0);
     border-width: 0 10px;
+    order: 1;
 }
 
 

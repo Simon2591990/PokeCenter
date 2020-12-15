@@ -60,7 +60,7 @@
         <label for="nurse_id">Nurse:</label>
         <select id="nurse_id" name="nurse_id">
             {% for nurse in nurses %}
-            <option value="{{nurse.id}}">{{nurse.name}} {{nurse.specialisation}}</option>
+            <option value="{{nurse.id}}">{{nurse.name}} ({{nurse.specialisation}})</option>
             {% endfor %}
         </select>
     </div>
