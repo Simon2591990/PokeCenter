@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.trainer import Trainer
 import repositories.trainer_repository as trainer_repository
+import repositories.pokemon_repository as pokemon_repository
 
 trainers_blueprint = Blueprint("trainers", __name__)
 
@@ -39,3 +40,10 @@ def edit_trainer(id):
     trainer = Trainer(name, number, id)
     trainer_repository.update(trainer)
     return redirect('/trainers')
+
+@trainers_blueprint.route("/trainers/<id>")
+def show_trainers_pokemon(id):
+    pokemons = pokemon_repository.select_all()
+    trainer = trainer_repository.select(id)
+    return render_template("/trainers/pokemon.html", pokemons = pokemons, trainer = trainer)
+    

@@ -1,29 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 
 {% block content %}
-<h1>Pokemon</h1>
+<h1>Trainer: {{trainer.name}}</h1>
+<h2>Trainer Number: {{trainer.number}}</h2>
 <div class="pokemon_container">
-{% for pokemon in pokemons%}
-<div class="pokemon {{pokemon.type}} {{pokemon.status}}">
-    
-        <ul class=pokemon_details>
+{%for pokemon in pokemons%}
+<div class="pokemon_details">
+{% if pokemon.trainer.id == trainer.id %}
+        <ul class="pokemon {{pokemon.type}} {{pokemon.status}}">
         <li>Nickname: <a href="/pokemon/{{pokemon.id}}/edit">{{pokemon.nickname}}</a></li>
         <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
         <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
         <li>Status: <a href="/pokemon/{{pokemon.status}}">{{pokemon.status}}</a></li>
         <li>Date of Birth: {{pokemon.dob}}</li>
-        <li>Contact Details: <a href="/trainers/{{pokemon.trainer.id}}">{{pokemon.trainer.name}}</a></li>
         <li>Nurse: <a href="/pokemon/{{pokemon.nurse.id}}">{{pokemon.nurse.name}}</a></li>
         </ul> 
-
-<form action="/pokemon/{{pokemon.id}}/edit">
-    <button>Edit</button>
-</form>
-<form action="/pokemon/{{pokemon.id}}/delete" method="post">
-    <button>Discharge</button>
-</form>
+{% endif %}
 </div>
 {% endfor %}
-
-</div>
 {% endblock %}
