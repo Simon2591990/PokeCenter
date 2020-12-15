@@ -72,7 +72,7 @@ def discharge_pokemon(id):
     pokemon = pokemon_repository.select(id)
     pokemon.status = "Healthy"
     pokemon_repository.update(pokemon)
-    return redirect("/pokemon")
+    return redirect("/pokemon/sick")
 
 @pokemon_blueprint.route("/pokemon/sick")
 def show_sick_pokemon():

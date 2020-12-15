@@ -20,27 +20,27 @@
     <div>
         <label for="type">Type:</label>
         <select id="type" name="type">
-            <option value="Grass">Grass</option>
-            <option value="Fire">Fire</option>
-            <option value="Water">Water</option>
-            <option value="Poison">Poison</option>
-            <option value="Ghost">Ghost</option>
-            <option value="Bug">Bug</option>
-            <option value="Fighting">Fighting</option>
-            <option value="Psychic">Psychic</option>
-            <option value="Rock">Rock</option>
-            <option value="Ground">Ground</option>
-            <option value="Dragon">Dragon</option>
-            <option value="Ice">Ice</option>
-            <option value="Electric">Electric</option>
-            <option value="Normal">Normal</option>
+            <option value="Grass" {%if pokemon.type == "Grass"%} selected {%endif%}>Grass</option>
+            <option value="Fire" {%if pokemon.type == "Fire"%} selected {%endif%}>Fire</option>
+            <option value="Water" {%if pokemon.type == "Water"%} selected {%endif%}>Water</option>
+            <option value="Poison" {%if pokemon.type == "Poison"%} selected {%endif%}>Poison</option>
+            <option value="Ghost" {%if pokemon.type == "Ghost"%} selected {%endif%}>Ghost</option>
+            <option value="Bug" {%if pokemon.type == "Bug"%} selected {%endif%}>Bug</option>
+            <option value="Fighting" {%if pokemon.type == "Fighting"%} selected {%endif%}>Fighting</option>
+            <option value="Psychic" {%if pokemon.type == "Psychic"%} selected {%endif%}>Psychic</option>
+            <option value="Rock" {%if pokemon.type == "Rock"%} selected {%endif%}>Rock</option>
+            <option value="Ground" {%if pokemon.type == "Ground"%} selected {%endif%}>Ground</option>
+            <option value="Dragon" {%if pokemon.type == "Dragon"%} selected {%endif%}>Dragon</option>
+            <option value="Ice" {%if pokemon.type == "Ice"%} selected {%endif%}>Ice</option>
+            <option value="Electric" {%if pokemon.type == "Electric"%} selected {%endif%}>Electric</option>
+            <option value="Normal" {%if pokemon.type == "Normal"%} selected {%endif%}>Normal</option>
         </select>
     </div>
     <div>
         <label for="trainer_id">Trainer:</label>
         <select id="trainer_id" name="trainer_id">
             {% for trainer in trainers %}
-            <option value="{{trainer.id}}">{{trainer.name}}</option>
+            <option value="{{trainer.id}}" {%if pokemon.trainer.id == trainer.id%} selected="selected" {%endif%}>{{trainer.name}}</option>
             {% endfor %}
         </select>
         
@@ -48,20 +48,20 @@
     <div>
         <label for="status">Status:</label>
         <select  id="status" name="status" required>
-            <option value="Poisoned">Poisoned</option>
-            <option value="Frozen">Frozen</option>
-            <option value="Paralysed">Paralysed</option>
-            <option value="Burned">Burned</option>
-            <option value="Confused">Confused</option>
-            <option value="Fainted">Fainted</option>
-            <option value="Healthy">Healthy</option>
+            <option value="Poisoned" {% if pokemon.status  == "Poisoned"%} selected {%endif%}>Poisoned</option>
+            <option value="Frozen" {% if pokemon.status  == "Frozen"%} selected {%endif%}>Frozen</option>
+            <option value="Paralysed" {% if pokemon.status  == "Paralysed"%} selected {%endif%}>Paralysed</option>
+            <option value="Burned" {% if pokemon.status  == "Burned"%} selected {%endif%}>Burned</option>
+            <option value="Confused" {% if pokemon.status  == "Confused"%} selected {%endif%}>Confused</option>
+            <option value="Fainted" {% if pokemon.status  == "Fainted"%} selected {%endif%}>Fainted</option>
+            <option value="Healthy" {% if pokemon.status  == "Healthy"%} selected {%endif%}>Healthy</option>
         </select>
     </div>
     <div>
         <label for="nurse_id">Nurse:</label>
         <select id="nurse_id" name="nurse_id">
             {% for nurse in nurses %}
-            <option value="{{nurse.id}}">{{nurse.name}} ({{nurse.specialisation}})</option>
+            <option value="{{nurse.id}}" {%if pokemon.nurse.id == nurse.id%} selected="selected" {%endif%}>{{nurse.name}} ({{nurse.specialisation}})</option>
             {% endfor %}
         </select>
     </div>

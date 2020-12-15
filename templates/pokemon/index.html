@@ -19,9 +19,11 @@
 <form action="/pokemon/{{pokemon.id}}/edit">
     <button class="edit">Edit</button>
 </form>
+{%if pokemon.status != "Healthy"%}
 <form action="/pokemon/{{pokemon.id}}/discharge" method="post">
     <button class="delete">Discharge</button>
 </form>
+{%endif%}
 </div>
 {% endfor %}
 

@@ -11,20 +11,20 @@
     <div>
         <label for="specialisation">Specialisation:</label>
         <select id="specialisation" name="specialisation">
-            <option value="Grass">Grass</option>
-            <option value="Fire">Fire</option>
-            <option value="Water">Water</option>
-            <option value="Poison">Poison</option>
-            <option value="Ghost">Ghost</option>
-            <option value="Bug">Bug</option>
-            <option value="Fighting">Fighting</option>
-            <option value="Psychic">Psychic</option>
-            <option value="Rock">Rock</option>
-            <option value="Ground">Ground</option>
-            <option value="Dragon">Dragon</option>
-            <option value="Ice">Ice</option>
-            <option value="Electric">Electric</option>
-            <option value="Normal">Normal</option>
+            <option value="Grass" {%if nurse.specialisation == "Grass"%} selected {%endif%}>Grass</option>
+            <option value="Fire" {%if nurse.specialisation == "Fire"%} selected {%endif%}>Fire</option>
+            <option value="Water" {%if nurse.specialisation == "Water"%} selected {%endif%}>Water</option>
+            <option value="Poison" {%if nurse.specialisation == "Poison"%} selected {%endif%}>Poison</option>
+            <option value="Ghost" {%if nurse.specialisation == "Ghost"%} selected {%endif%}>Ghost</option>
+            <option value="Bug" {%if nurse.specialisation == "Bug"%} selected {%endif%}>Bug</option>
+            <option value="Fighting" {%if nurse.specialisation == "Fighting"%} selected {%endif%}>Fighting</option>
+            <option value="Psychic" {%if nurse.specialisation == "Psychic"%} selected {%endif%}>Psychic</option>
+            <option value="Rock" {%if nurse.specialisation == "Rock"%} selected {%endif%}>Rock</option>
+            <option value="Ground" {%if nurse.specialisation == "Ground"%} selected {%endif%}>Ground</option>
+            <option value="Dragon" {%if nurse.specialisation == "Dragon"%} selected {%endif%}>Dragon</option>
+            <option value="Ice" {%if nurse.specialisation == "Ice"%} selected {%endif%}>Ice</option>
+            <option value="Electric" {%if nurse.specialisation == "Electric"%} selected {%endif%}>Electric</option>
+            <option value="Normal" {%if nurse.specialisation == "Normal"%} selected {%endif%}>Normal</option>
         </select>
     </div>
     <button type="submit">Confirm</button>
