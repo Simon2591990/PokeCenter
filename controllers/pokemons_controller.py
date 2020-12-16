@@ -91,9 +91,9 @@ def info(id):
 
 @pokemon_blueprint.route("/pokemon/info/", methods=['POST'])
 def search():
-    catagory = request.form['catagory']
+    category = request.form['category']
     search = request.form['search']
-    pokemons = pokemon_repository.search(catagory, search)
+    pokemons = pokemon_repository.search(category, search)
     return  render_template("pokemon/info.html", pokemons = pokemons)
 
 @pokemon_blueprint.route("/pokemon/<species>/species")

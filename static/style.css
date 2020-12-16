@@ -16,10 +16,12 @@ h1, h2{
     text-align: center;
     margin: auto;
     width: 500px;
+    color: white;
     
 }
 header > ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
@@ -34,7 +36,7 @@ header > ul > li{
 }
 
 header > a{
-    color: 	#f2f6d8;
+    color: 	white;
 }
 
 a {
