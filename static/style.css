@@ -18,15 +18,23 @@ h1, h2{
     width: 500px;
     
 }
-
-header > ul > li{
-    background-color: #f2f5d8;
-    padding: 10px;
-    border-radius: 10px
-}
 header > ul {
+    display: flex;
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: center;
+}
+
+header > ul > li{
+    background-color: #f2f6d8;
+    padding: 10px;
+    border-color: #ffecec;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+header > a{
+    color: 	#f2f6d8;
 }
 
 a {
@@ -59,7 +67,7 @@ ul > li {
     background-color: #ea9da9;
     border-radius: 10px 10px 10px 10px;
     padding: 10px;
-    width: 250px;
+    width: 200px;
     margin: 5px;
     border-width: 0 5px;
     justify-content: center;
@@ -68,7 +76,7 @@ ul > li {
 .pokemon_show_all{
     background-color: #ea9da9;
     border-radius: 10px 10px 10px 10px;
-    width: 250px;
+    width: 200px;
     margin: 5px;
     border-width: 0 5px;
     justify-content: center;
@@ -77,6 +85,7 @@ ul > li {
 }
 .pokemon_details{
     list-style: none;
+    padding-left: 5px;
 }
 
 #menu{
@@ -115,14 +124,13 @@ ul > li {
 .nurse {
     background-color: #ea9da9;
     border-radius: 10%;
-    height: auto;
-    width: 150px;
+    height: 100px;
+    width: auto;
     border: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     margin: auto;
-    align-items: center;
     text-align: left;
 }
 .new_nurse{
@@ -151,14 +159,17 @@ ul > li {
     background-color: #ea9da9;
     border-radius: 10px;
     height: auto;
-    width: 150px;
+    width: 130px;
     margin: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
-    margin: 5;
-    text-align: center;
+    text-align: left;
     grid-area: trainer;
+}
+
+.trainer > ul{
+    padding: 0px;
 }
 .new_trainer{
     grid-area: new_trainer;

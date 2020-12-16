@@ -9,7 +9,7 @@
 <div class="pokemon {{pokemon.type}} {{pokemon.status}}">
         <ul>
                 <li>Nickname: <a href="/pokemon/{{pokemon.id}}/edit">{{pokemon.nickname}}</a></li>
-                <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
+                <li>Species: <a href="/pokemon/{{pokemon.species}}/species">{{pokemon.species}}</a></li>
                 <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
                 <li>Status: <a href="/pokemon/{{pokemon.status}}">{{pokemon.status}}</a></li>
                 <li>Date of Birth: {{pokemon.dob}}</li>
@@ -22,9 +22,11 @@
                 <form action="/pokemon/{{pokemon.id}}/discharge" method="post">
                         <button class="delete">Discharge</button>
                 </form>
+
                 {%endif%}
-{% endif %}
 </div>
+{% endif %}
+
 {% endfor %}
 </div>
 {% endblock %}

@@ -96,6 +96,10 @@ def search():
     pokemons = pokemon_repository.search(catagory, search)
     return  render_template("pokemon/info.html", pokemons = pokemons)
 
+@pokemon_blueprint.route("/pokemon/<species>/species")
+def find_by_species(species):
+    pokemons = pokemon_repository.search("species", species)
+    return render_template("/pokemon/info.html", pokemons = pokemons)
 
 
 
