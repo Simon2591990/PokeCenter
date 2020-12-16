@@ -59,10 +59,10 @@ def update(pokemon):
     values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id, pokemon.id]
     run_sql(sql, values)
 
-def search(search):
+def search(catagory, search):
     pokemons = []
-    sql = "SELECT * FROM pokemons WHERE nickname = %s"
-    values = [search]
+    sql = "SELECT * FROM pokemons WHERE %s = %s"
+    values = [catagory, search]
     results = run_sql(sql, values)
     for row in results:
         nurse = nurse_repository.select(row['nurse_id'])

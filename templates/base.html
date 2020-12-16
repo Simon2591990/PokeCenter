@@ -21,8 +21,14 @@
             <li><a href="/trainers">Trainers</a></li>
             <!-- <li><a href="/trainers/new">New Trainer</a></li> -->
         </ul>
-        <form class="search" action="/pokemon/info/", method="post">        
-            <label id="search">Name</label>
+        <form class="search" action="/pokemon/info/", method="post">  
+            <select id="catagory" name="catagory">
+                <option value="nickname">Nickname</option>
+                <option value="type">Type</option>
+                <option value="species">Species</option>
+                <option value="status">Status</option>
+            </select>    
+            <label id="search"></label>
             <input type="text" id="search" name="search">
             <button type="submit">Search</button>
         </form>
