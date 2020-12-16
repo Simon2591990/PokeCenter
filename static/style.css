@@ -26,14 +26,18 @@ a {
 
 .search{
     padding: 10px;
+    justify-content: center;
+}
+
+.search > button{
+    border-radius: 50%;
+    padding: 0px;
 }
 ul > li {  
     list-style: none;  
 }
 
-#header > ul{
-    /* display: flex; */
-}
+
 .pokemon_container{
     display: flex;
     align-content: center;
@@ -63,9 +67,6 @@ ul > li {
 }
 .pokemon_details{
     list-style: none;
-    
-
-    
 }
 
 #menu{
@@ -78,12 +79,13 @@ ul > li {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 260px;
-    text-align: center;
+    width: 250px;
+    text-align: end;
     align-items: flex-end;
     background-color: #ea9da9;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 0px;
 }
 
 .nurse_page{
@@ -121,7 +123,8 @@ ul > li {
 }
 .trainers_page{
     display: grid;
-    grid-template-columns: "trainer new_trainer";
+    grid-template-areas: "trainer new_trainer";
+    
     justify-content: start;
 }
 .trainers_container {
@@ -142,11 +145,11 @@ ul > li {
     flex-direction: column;
     margin: 5;
     text-align: center;
-    grid-column: trainer;
+    grid-area: trainer;
 }
 .new_trainer{
-    grid-column: new_trainer;
-    width: 250px;
+    grid-area: new_trainer;
+    width: auto;
     text-align: right;
     margin-right: 10px ;
 }
@@ -180,9 +183,10 @@ ul > li {
     text-decoration: none;
     border: black;
     display: inline-block;
-    padding: 10px 10px;
+    /* padding: 5px 5px; */
     transition-duration: 0.5s;
-    border-radius: 10%;
+    border-radius: 5px;
+    
 }
 
 .delete:hover{
@@ -193,6 +197,11 @@ ul > li {
 }
 .new_button:hover{
     background-color:  rgb(203, 255, 218);
+}
+
+button{
+    margin: 2px;
+    padding: 5px 5px;
 }
 
 .Grass{
