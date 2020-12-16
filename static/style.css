@@ -121,12 +121,14 @@ ul > li {
 }
 .trainers_page{
     display: grid;
-    grid-template-areas: "trainer new_trainer";
+    grid-template-columns: "trainer new_trainer";
+    justify-content: start;
 }
 .trainers_container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .trainer {
@@ -138,13 +140,12 @@ ul > li {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    align-items: center;
+    margin: 5;
     text-align: center;
-    grid-area: trainer;
+    grid-column: trainer;
 }
 .new_trainer{
-    grid-area: new_trainer;
+    grid-column: new_trainer;
     width: 250px;
     text-align: right;
     margin-right: 10px ;
