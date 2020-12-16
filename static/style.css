@@ -19,6 +19,16 @@ h1, h2{
     
 }
 
+header > ul > li{
+    background-color: #f2f5d8;
+    padding: 10px;
+    border-radius: 10px
+}
+header > ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 a {
     color: #ffecec;
     text-decoration: none;
@@ -113,23 +123,26 @@ ul > li {
     flex-direction: column;
     margin: auto;
     align-items: center;
+    text-align: left;
 }
 .new_nurse{
     grid-area: new;
     width: 200px;
     text-align: right;
     margin-right: 10px ;
-    
+}
+.nurse_buttons, .trainer_buttons{
+    display: flex;
 }
 .trainers_page{
     display: grid;
     grid-template-areas: "trainer new_trainer";
     
-    justify-content: start;
 }
+
 .trainers_container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
 }

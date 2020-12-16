@@ -10,7 +10,7 @@
     <a href="/staff/{{nurse.id}}">Name: {{nurse.name}}</a>
     <a href="/pokemon/{{type}}">Specialisation: {{nurse.specialisation}}</a>
 
-<div>
+<div class="nurse_buttons">
     <form action="/staff/{{nurse.id}}/edit">
         <button class="edit">Edit</button>        
     </form>
@@ -28,7 +28,7 @@
     </div>
     <div>
         <label for="specialisation"></label>
-        <select id="specialisation" name="specialisation">
+        <select id="specialisation" name="specialisation" required>
             <option selected disabled hidden>Specialisation</option>
             <option value="Grass">Grass</option>
             <option value="Fire">Fire</option>
