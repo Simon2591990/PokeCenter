@@ -61,8 +61,15 @@ def update(pokemon):
 
 def search(catagory, search):
     pokemons = []
-    sql = "SELECT * FROM pokemons WHERE %s = %s"
-    values = [catagory, search]
+    if catagory == "nickname":
+        sql = "SELECT * FROM pokemons WHERE nickname = %s"
+    elif catagory == "type":
+        sql = "SELECT * FROM pokemons WHERE type = %s"
+    elif catagory == "species":
+        sql = "SELECT * FROM pokemons WHERE species = %s"
+    elif catagory == "status":
+        sql = "SELECT * FROM pokemons WHERE status = %s"
+    values = [search]
     results = run_sql(sql, values)
     for row in results:
         nurse = nurse_repository.select(row['nurse_id'])
