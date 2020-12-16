@@ -29,3 +29,7 @@ trainer.name = 'Simondovich'
 
 
 trainer_repository.update(trainer)
+
+nurse_1.name = "Betsy"
+
+nurse_repository.update(nurse_1)

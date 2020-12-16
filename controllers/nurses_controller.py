@@ -3,6 +3,7 @@ from flask import Blueprint
 from models.nurse import Nurse
 import repositories.nurse_repository as nurse_repository
 import repositories.pokemon_repository as pokemon_repository
+import pdb
 
 nurses_blueprint = Blueprint("nurses", __name__)
 

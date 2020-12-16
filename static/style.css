@@ -3,7 +3,7 @@ body {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;;
     background-color: #fbd4dc;
     background-image: url("https://cdn.hipwallpaper.com/i/10/35/kotNd3.jpg");
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 #header {
@@ -181,7 +181,7 @@ ul > li {
 }
 
 .delete{
-    background-color: red;
+    background-color: rgb(255, 73, 73);
     text-align: center;
     color: rgb(233, 233, 233);
     text-decoration: none;
@@ -192,7 +192,7 @@ ul > li {
     border-radius: 10%;
 }
 .edit{
-    background-color: rgb(0, 102, 255);
+    background-color: rgb(64, 137, 247);
     text-align: center;
     color: rgb(233, 233, 233);
     text-decoration: none;
@@ -203,7 +203,7 @@ ul > li {
     border-radius: 10%;
 }
 .new_button{
-    background-color: rgb(0, 255, 76);
+    background-color: rgb(99, 247, 144);
     text-align: center;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -216,13 +216,13 @@ ul > li {
 }
 
 .delete:hover{
-    background-color: rgb(110, 0, 0);
+    background-color: rgb(111, 45, 45);
 }
 .edit:hover{
-    background-color: rgb(0, 0, 145)
+    background-color: rgb(52, 52, 143)
 }
 .new_button:hover{
-    background-color:  rgb(203, 255, 218);
+    background-color:  rgb(57, 138, 80);
 }
 
 button{
@@ -231,77 +231,77 @@ button{
 }
 
 .Grass{
-    background-color: green;
+    background-color: rgb(83, 189, 94);
     
 }
 .Electric{
-    background-color: rgb(255, 230, 0);
+    background-color: rgb(240, 233, 171);
 }
 .Fire{
-    background-color: rgb(255, 72, 0);
+    background-color: rgb(255, 125, 73);
 }
 
 .Water{
-    background-color: blue;
+    background-color: rgb(92, 92, 170);
 }
 
 .Normal{
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(201, 201, 201);
 }
 
 .Poison{
-    background-color: darkmagenta;
+    background-color: rgb(136, 85, 136);
 }
 .Bug {
-    background-color: rgb(179, 255, 38);
+    background-color: rgb(216, 255, 144);
 }
 .Dragon {
-    background-color: lightblue;
+    background-color: rgb(148, 183, 194);
 }
 
 .Fighting{
-    background-color: rgb(172, 0, 0);
+    background-color: rgb(148, 70, 70);
 }
 .Ground{
-    background-color: rgb(255, 211, 16);
+    background-color: rgb(244, 220, 117);
 }
 .Psychic{
-    background-color: rgb(255, 56, 179);
+    background-color: rgb(223, 140, 191);
 }
 .Rock{
-    background-color: rgb(179, 101, 13);
+    background-color: rgb(179, 131, 77);
 }
 .Ice{
-    background-color: rgb(14, 207, 255);
+    background-color: rgb(182, 235, 249);
 }
 
 .Burned{
-    border: solid rgb(255, 17, 0);
+    border: solid rgb(254, 150, 143);
     
 }
 .Frozen{
-    border: solid rgb(69, 233, 245);
+    border: solid rgb(156, 246, 252);
     
 }
 .Paralysed{
-    border: solid rgb(255, 240, 36);
+    border: solid rgb(254, 246, 145);
     
 }
 .Poisoned{
-    border: solid rgb(166, 0, 216);
+    border: solid rgb(225, 149, 249);
     
 }
 .Confused{
-    border: solid rgb(212, 194, 255);
+    border: solid rgb(226, 214, 254);
     
 }
 .Fainted{
-    border: solid rgb(124, 124, 124);
+    border: solid rgb(72, 72, 72);
     
 }
 
 .Healthy{
-    border: solid rgb(72, 253, 0);
+    border: solid rgb(112, 193, 85);
     order: 2;
 }
 

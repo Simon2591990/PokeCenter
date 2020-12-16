@@ -42,7 +42,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(nurse):
-    sql = "UPDATE nurses SET (name, speialisation) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE nurses SET (name, specialisation) = (%s, %s) WHERE id = %s"
     values = [nurse.name, nurse.specialisation, nurse.id]
     run_sql(sql, values)
 
