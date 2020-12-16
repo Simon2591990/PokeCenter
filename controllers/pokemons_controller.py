@@ -83,11 +83,19 @@ def show_sick_pokemon():
             sick_pokemon.append(pokemon)
     return render_template("pokemon/sick.html", pokemons = sick_pokemon)
 
-@pokemon_blueprint.route("/pokemon/search/", methods=['POST'])
+@pokemon_blueprint.route("/pokemon/<id>/info")
+def info(id):
+    pokemons = []
+    pokemons.append(pokemon_repository.select(id))
+    return render_template("pokemon/info.html", pokemons = pokemons)
+
+@pokemon_blueprint.route("/pokemon/info/", methods=['POST'])
 def search():
     search = request.form['search']
     pokemons = pokemon_repository.search(search)
-    return  render_template("pokemon/search.html", pokemons = pokemons)
+    return  render_template("pokemon/info.html", pokemons = pokemons)
+
+
 
 
 

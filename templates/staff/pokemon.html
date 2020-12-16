@@ -4,21 +4,27 @@
 
 <h1>Nurse: {{nurse.name}}</h1>
 <div class="pokemon_container">
-
-{%for pokemon in pokemons%}
-<div class="pokemon_details">
-    
+{%for pokemon in pokemons%}    
 {% if pokemon.nurse.id == nurse.id %}
-        <ul class="pokemon {{pokemon.type}} {{pokemon.status}}">
-        <li>Nickname: <a href="/pokemon/{{pokemon.id}}/edit">{{pokemon.nickname}}</a></li>
-        <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
-        <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
-        <li>Status: <a href="/pokemon/{{pokemon.status}}">{{pokemon.status}}</a></li>
-        <li>Date of Birth: {{pokemon.dob}}</li>
-        <li>Contact Details: <a href="/trainers/{{pokemon.trainer.id}}">{{pokemon.trainer.name}}</a></li>
+<div class="pokemon {{pokemon.type}} {{pokemon.status}}">
+        <ul>
+                <li>Nickname: <a href="/pokemon/{{pokemon.id}}/edit">{{pokemon.nickname}}</a></li>
+                <li>Species: <a href="/pokemon/{{pokemon.species}}">{{pokemon.species}}</a></li>
+                <li>Type: <a href="/pokemon/{{pokemon.type}}">{{pokemon.type}}</a></li>
+                <li>Status: <a href="/pokemon/{{pokemon.status}}">{{pokemon.status}}</a></li>
+                <li>Date of Birth: {{pokemon.dob}}</li>
+                <li>Contact Details: <a href="/trainers/{{pokemon.trainer.id}}">{{pokemon.trainer.name}}</a></li>
         </ul> 
+        <form action="/pokemon/{{pokemon.id}}/edit">
+                <button class="edit">Edit</button>
+        </form>
+                {%if pokemon.status != "Healthy"%}
+                <form action="/pokemon/{{pokemon.id}}/discharge" method="post">
+                        <button class="delete">Discharge</button>
+                </form>
+                {%endif%}
 {% endif %}
-
 </div>
 {% endfor %}
+</div>
 {% endblock %}
