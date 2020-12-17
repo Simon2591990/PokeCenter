@@ -59,15 +59,15 @@ def update(pokemon):
     values = [pokemon.nickname, pokemon.species, pokemon.type, pokemon.dob, pokemon.trainer.id, pokemon.status, pokemon.nurse.id, pokemon.id]
     run_sql(sql, values)
 
-def search(catagory, search):
+def search(category, search):
     pokemons = []
-    if catagory == "nickname":
+    if category == "nickname":
         sql = "SELECT * FROM pokemons WHERE nickname = %s"
-    elif catagory == "type":
+    elif category == "type":
         sql = "SELECT * FROM pokemons WHERE type = %s"
-    elif catagory == "species":
+    elif category == "species":
         sql = "SELECT * FROM pokemons WHERE species = %s"
-    elif catagory == "status":
+    elif category == "status":
         sql = "SELECT * FROM pokemons WHERE status = %s"
     values = [search]
     results = run_sql(sql, values)
