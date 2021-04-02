@@ -34,12 +34,12 @@ class TestPokemon(unittest.TestCase):
         self.assertEqual(None, self.pokemon.nurse) 
 
     def test_assign_nurse(self):
-        nurse = Nurse('Joy')
+        nurse = Nurse('Joy', 'fire')
         self.pokemon.assign_nurse(nurse)
         self.assertEqual(nurse, self.pokemon.nurse)
 
     def test_get_nurse_name(self):
-        nurse = Nurse('Joy')
+        nurse = Nurse('Joy', 'fire')
         self.pokemon.assign_nurse(nurse)
         self.assertEqual('Joy', self.pokemon.nurse.name)
 
